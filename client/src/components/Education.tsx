@@ -24,7 +24,7 @@ export default function Education() {
             <div className="glass-card p-6 rounded-2xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-blue-500"></div>
               <h4 className="text-lg font-bold text-foreground">Higher Secondary Certificate (HSC)</h4>
-              <p className="text-muted-foreground mt-1 mb-3">St.Mary's Matriculation Higher Secondary School</p>
+              <p className="text-muted-foreground mt-1 mb-3">St.Mary's Matriculation Higher Secondary School, Cuddalore</p>
               <div className="inline-flex px-3 py-1 bg-secondary text-foreground font-medium rounded-md mt-3">
                 Score: 91%
               </div>
@@ -33,7 +33,7 @@ export default function Education() {
             <div className="glass-card p-6 rounded-2xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-indigo-500"></div>
               <h4 className="text-lg font-bold text-foreground">Secondary School Leaving Certificate (SSLC)</h4>
-              <p className="text-muted-foreground mt-1 mb-3">St.Mary's Matriculation Higher Secondary School</p>
+              <p className="text-muted-foreground mt-1 mb-3">St.Mary's Matriculation Higher Secondary School, Cuddalore</p>
               <div className="inline-flex px-3 py-1 bg-secondary text-foreground font-medium rounded-md mt-3">
                 Score: 98%
               </div>

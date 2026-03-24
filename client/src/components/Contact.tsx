@@ -42,7 +42,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Location</p>
-                  <p className="font-medium text-foreground">Cuddalore, India</p>
+                  <p className="font-medium text-foreground">Coimbatore, India</p>
                 </div>
               </div>
             </div>

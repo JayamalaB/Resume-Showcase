@@ -74,7 +74,7 @@ export default function Hero() {
             className="mt-16 flex flex-col sm:flex-row sm:items-center gap-6"
           >
             <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-primary" /> Cuddalore, India
+              <MapPin className="w-4 h-4 text-primary" /> Coimbatore, India
             </p>
             <div className="hidden sm:block h-px w-12 bg-border"></div>
             <div className="flex gap-4">
