@@ -78,13 +78,13 @@ export default function Hero() {
             </p>
             <div className="hidden sm:block h-px w-12 bg-border"></div>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors border border-border" aria-label="GitHub">
+              <a href="https://github.com/JayamalaB" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors border border-border" aria-label="GitHub">
                 <Github className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors border border-border" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/b-jayamala-81274b237" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors border border-border" aria-label="LinkedIn">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#contact" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors border border-border" aria-label="Email">
+              <a href="mailto:jayamalab333@gmail.com" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors border border-border" aria-label="Email">
                 <Mail className="w-4 h-4" />
               </a>
             </div>

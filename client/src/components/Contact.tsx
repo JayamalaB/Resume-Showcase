@@ -16,23 +16,23 @@ export default function Contact() {
             </p>
             
             <div className="space-y-6">
-              <a href="mailto:contact@jayamala.com" className="flex items-center gap-4 group">
+              <a href="mailto:jayamalab333@gmail.com" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-background flex items-center justify-center border border-border group-hover:border-primary/50 transition-colors">
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium text-foreground">contact@example.com</p>
+                  <p className="font-medium text-foreground">jayamalab333@gmail.com</p>
                 </div>
               </a>
               
-              <a href="tel:+910000000000" className="flex items-center gap-4 group">
+              <a href="tel:+918056535850" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-full bg-background flex items-center justify-center border border-border group-hover:border-primary/50 transition-colors">
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="font-medium text-foreground">+91 00000 00000</p>
+                  <p className="font-medium text-foreground">+91 80565 35850</p>
                 </div>
               </a>
               
@@ -48,10 +48,10 @@ export default function Contact() {
             </div>
             
             <div className="mt-10 flex gap-4">
-              <a href="#" className="w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all">
+              <a href="https://www.linkedin.com/in/b-jayamala-81274b237" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all">
+              <a href="https://github.com/JayamalaB" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-background border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all">
                 <Github className="w-5 h-5" />
               </a>
             </div>

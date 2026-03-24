@@ -5,7 +5,7 @@ export default function Experience() {
   const experiences = [
     {
       role: "Data Analyst & Software Developer",
-      company: "Neuralarc Global",
+      company: "NeuralArc Global Private Limited",
       period: "Jul 2024 – Present",
       description: "Developing comprehensive Power BI dashboards to visualize key business metrics. Analyzing complex data using MySQL and managing robust backend architectures using Flask and PHP. Orchestrating ETL processes and automating workflows using ServiceNow to enhance operational efficiency.",
       skills: ["Power BI", "MySQL", "Python Flask", "PHP", "ETL", "ServiceNow"]
