@@ -1,7 +1,48 @@
 import Section from "./Section";
 import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/jayamalab333@gmail.com", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+      
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        form.reset();
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <Section id="contact" title="Get In Touch" icon={Mail} className="bg-secondary/30">
       <div className="max-w-4xl mx-auto glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden">
@@ -59,7 +100,7 @@ export default function Contact() {
           
           <div className="bg-background rounded-2xl p-6 border border-border">
             <h4 className="text-xl font-bold mb-6">Send a Message</h4>
-            <form className="space-y-4" action="https://formsubmit.co/jayamalab333@gmail.com" method="POST">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <input type="hidden" name="_subject" value="New submission from your portfolio website!" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
@@ -99,9 +140,10 @@ export default function Contact() {
               </div>
               <button 
                 type="submit"
-                className="w-full bg-primary text-primary-foreground font-medium rounded-lg px-4 py-3 hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full bg-primary text-primary-foreground font-medium rounded-lg px-4 py-3 hover:bg-primary/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
