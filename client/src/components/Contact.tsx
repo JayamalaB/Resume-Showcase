@@ -59,26 +59,39 @@ export default function Contact() {
           
           <div className="bg-background rounded-2xl p-6 border border-border">
             <h4 className="text-xl font-bold mb-6">Send a Message</h4>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-4" action="https://formsubmit.co/jayamalab333@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="New submission from your portfolio website!" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              
               <div>
-                <label className="block text-sm font-medium mb-2 text-muted-foreground">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-muted-foreground">Name</label>
                 <input 
                   type="text" 
+                  id="name"
+                  name="name"
+                  required
                   className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
                   placeholder="Your Name"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2 text-muted-foreground">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-muted-foreground">Email</label>
                 <input 
                   type="email" 
+                  id="email"
+                  name="email"
+                  required
                   className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all"
                   placeholder="Your Email"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2 text-muted-foreground">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-muted-foreground">Message</label>
                 <textarea 
+                  id="message"
+                  name="message"
+                  required
                   rows={4}
                   className="w-full bg-secondary/50 border border-border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none"
                   placeholder="How can I help you?"
