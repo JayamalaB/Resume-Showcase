@@ -2,6 +2,8 @@ import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { serveStatic } from "./static";
 import { createServer } from "http";
+import path from "path";
+
 
 const app = express();
 const httpServer = createServer(app);
@@ -90,14 +92,26 @@ app.use((req, res, next) => {
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || "5000", 10);
-  httpServer.listen(
-    {
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    },
-    () => {
-      log(`serving on port ${port}`);
-    },
-  );
+
+httpServer.listen(port, () => {
+  log(`serving on port ${port}`);
+});
+  // const port = parseInt(process.env.PORT || "5000", 10);
+  // httpServer.listen(
+  //   {
+  //     port,
+  //     host: "0.0.0.0",
+  //     reusePort: true,
+  //   },
+  //   () => {
+  //     log(`serving on port ${port}`);
+  //   },
+  // );
 })();
+
+// Serve frontend build
+app.use(express.static(path.join(__dirname, "../dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
+});
