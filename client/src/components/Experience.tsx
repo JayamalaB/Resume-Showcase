@@ -4,31 +4,44 @@ import { Briefcase } from "lucide-react";
 export default function Experience() {
   const experiences = [
     {
-      role: "Data Analyst & Software Developer",
-      company: "NeuralArc Global Private Limited",
+      role: "Software Developer & Data Analyst",
+      company: "Neuralarc Global Pvt. Ltd., Coimbatore",
       period: "Jul 2024 – Present",
-      description: "Developing comprehensive Power BI dashboards to visualize key business metrics. Analyzing complex data using MySQL and managing robust backend architectures using Flask and PHP. Orchestrating ETL processes and automating workflows using ServiceNow to enhance operational efficiency.",
-      skills: ["Power BI", "MySQL", "Python Flask", "PHP", "ETL", "ServiceNow"]
+      bullets: [
+        "Built and maintained REST API integrations in Python connecting multiple backend services — ensuring reliable data flow, structured error handling, and data integrity across production workflows.",
+        "Developed a voice-enabled multilingual chatbot using Sarvam AI's Saras (STT) and Bulbul (TTS) models — supporting English and Tanglish, deployed in a production customer-facing interface.",
+        "Applied RAG concepts to enhance chatbot response quality with context-aware, document-grounded answers — actively deepening practical LangChain expertise.",
+        "Built backend automation scripts using ServiceNow integrations to streamline operational processes, significantly reducing manual effort.",
+        "Managed MySQL databases in production — designed schemas, wrote optimised queries, resolved data integrity issues, and enforced access controls.",
+        "Delivered Power BI dashboards providing operational metrics to product and business teams."
+      ],
+      skills: ["Python", "REST APIs", "Sarvam AI", "RAG", "LangChain", "ServiceNow", "MySQL", "Power BI", "JWT"]
     },
     {
       role: "Business Analyst Intern",
-      company: "Digital Garage",
-      period: "Internship",
-      description: "Drafted Business Requirements Documents (BRDs) to align project goals with stakeholder needs. Collaborated with cross-functional teams using Agile methodologies and managed project tracking and delivery via Jira.",
-      skills: ["BRDs", "Agile", "Jira", "Business Analysis"]
+      company: "Digital Garage, Coimbatore",
+      period: "Feb 2024 – May 2024",
+      bullets: [
+        "Collaborated within Agile/Scrum delivery cycles at a product startup using Jira — contributed to sprint planning and cross-functional delivery with design and engineering teams.",
+        "Translated product requirements into clear BRDs and user stories, bridging communication between engineering and non-technical stakeholders."
+      ],
+      skills: ["Agile/Scrum", "Jira", "BRDs", "User Stories"]
     },
     {
       role: "Data Science Intern",
-      company: "Cube N Square",
-      period: "Internship",
-      description: "Conducted comprehensive Exploratory Data Analysis (EDA) to uncover data trends. Designed and implemented predictive Machine Learning models using Python, contributing to data-driven decision-making.",
-      skills: ["Python", "EDA", "Machine Learning", "Data Science"]
+      company: "Cube N Square, Chennai",
+      period: "Aug 2023 – Jan 2024",
+      bullets: [
+        "Wrote Python scripts for data preprocessing and analysis to build and evaluate ML models — reinforced clean coding and debugging practices.",
+        "Produced technical documentation on data science workflows for varied audiences, demonstrating ability to communicate complex topics clearly."
+      ],
+      skills: ["Python", "Machine Learning", "EDA", "Data Science"]
     }
   ];
 
   return (
     <Section id="experience" title="Work Experience" icon={Briefcase}>
-      <div className="max-w-4xl relative">
+      <div className="relative">
         {/* Timeline line */}
         <div className="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-border"></div>
 
@@ -48,9 +61,14 @@ export default function Experience() {
                     {exp.period}
                   </span>
                 </div>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {exp.description}
-                </p>
+                <ul className="space-y-2 mb-6">
+                  {exp.bullets.map((bullet, i) => (
+                    <li key={i} className="text-muted-foreground leading-relaxed text-sm flex items-start gap-2">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
                 <div className="flex flex-wrap gap-2">
                   {exp.skills.map((skill, i) => (
                     <span key={i} className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary border border-primary/20 rounded-full">

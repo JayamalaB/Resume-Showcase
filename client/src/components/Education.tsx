@@ -49,10 +49,11 @@ export default function Education() {
           
           <div className="grid gap-4">
             {[
-              "NPTEL Certification",
-              "Data Science Certification",
-              "QCFI Gold Certification",
-              "TCS NQT Certification"
+              "NPTEL ELITE with Silver – Data Analytics with Python (80%)",
+              "NPTEL ELITE – Data Science for Engineers",
+              "Data Science with Python – Great Learning",
+              "Gold Award – QCFI Coimbatore & Chennai Chapter",
+              "TCS NQT Cognitive Exam – 62%"
             ].map((cert, index) => (
               <div key={index} className="glass-card p-5 rounded-xl flex items-center gap-4 group hover:bg-secondary/50 transition-colors">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">

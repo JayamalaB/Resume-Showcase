@@ -1,42 +1,72 @@
 import Section from "./Section";
-import { FolderGit2, CheckCircle2, ChevronRight } from "lucide-react";
+import { FolderGit2, CheckCircle2, ChevronRight, Github } from "lucide-react";
 
 export default function Projects() {
   const projects = [
     {
-      title: "Inventory Management System",
-      description: "A comprehensive web-based inventory management system designed to streamline stock tracking and management operations.",
+      title: "Multilingual Voice Chatbot",
+      description: "Production voice-enabled chatbot supporting English and Tanglish — integrated Sarvam AI for speech recognition and natural voice responses, deployed in a customer-facing interface.",
       features: [
-        "CRUD operations for product management",
-        "Real-time tracking of stock levels",
-        "Low stock alerts and automated notifications",
-        "Interactive analytics dashboard"
+        "Sarvam AI Saras STT for speech recognition",
+        "Bulbul TTS for natural voice responses",
+        "RAG to ground responses in internal documents",
+        "Improved contextual accuracy for real user queries"
       ],
-      techStack: ["PHP/Python", "MySQL", "HTML", "CSS", "JavaScript"],
-      impact: "Significantly reduced manual errors and improved overall inventory visibility for better decision-making."
+      techStack: ["Python", "Sarvam AI", "Saras STT", "Bulbul TTS", "RAG"],
+      impact: "Deployed in production — enabled multilingual voice interaction for real end-users.",
+      github: null
+    },
+    {
+      title: "Inventory Management System",
+      description: "Full-stack inventory management system on the MERN stack with JWT-secured REST APIs and real-time stock tracking.",
+      features: [
+        "JWT-secured REST APIs across all endpoints",
+        "MongoDB document schema design",
+        "React.js frontend for real-time stock tracking",
+        "Secure API practices tested via Postman"
+      ],
+      techStack: ["MongoDB", "Express.js", "React.js", "Node.js", "JWT", "Postman"],
+      impact: "End-to-end MERN project demonstrating secure API design and full-stack ownership.",
+      github: null
     },
     {
       title: "ERP Module Development",
-      description: "Custom Enterprise Resource Planning (ERP) modules built to integrate seamlessly with existing business workflows.",
+      description: "Backend ERP modules with REST API integrations in CodeIgniter — built frontend views, optimised MySQL queries, and debugged cross-layer integration issues.",
       features: [
-        "Dedicated sales and inventory modules",
-        "Automated report generation",
-        "Role-based access control and security"
+        "REST API integrations in CodeIgniter",
+        "Frontend views and backend business logic",
+        "Optimised MySQL queries for performance",
+        "Cross-layer debugging across API, backend, and DB"
       ],
-      techStack: ["PHP/Python", "MySQL", "REST APIs"],
-      impact: "Streamlined business operations and drastically reduced manual data entry time."
+      techStack: ["PHP", "CodeIgniter", "MySQL", "REST APIs"],
+      impact: "Streamlined business operations and reduced manual data entry in production ERP workflows.",
+      github: null
     },
     {
-      title: "Business Websites using WordPress",
-      description: "Development and delivery of professional, performant, and SEO-optimized business websites using WordPress.",
+      title: "Leave Management System",
+      description: "Full-stack PHP/MySQL web application for managing employee leave requests with role-based access control for Admins, Managers, and Employees.",
       features: [
-        "Custom theme design and modifications",
-        "Advanced plugin integration",
-        "On-page SEO optimization",
-        "Performance and speed tuning"
+        "Role-based access: Admin, Manager, Employee",
+        "Leave request submission and approval workflows",
+        "Admin dashboard for managing users and leave types",
+        "MySQL-backed with secure session management"
       ],
-      techStack: ["WordPress", "Elementor", "HTML", "CSS"],
-      impact: "Enhanced online presence for clients, coupled with much faster project deployment cycles."
+      techStack: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+      impact: "Demonstrates production-grade role-based access design and full CRUD workflows in PHP.",
+      github: "https://github.com/JayamalaB/leave-management"
+    },
+    {
+      title: "FooDash — Order Management App",
+      description: "Full-stack food delivery order management system with a React + Vite frontend and Node.js + Express backend.",
+      features: [
+        "React + Vite frontend for fast, responsive UI",
+        "Node.js + Express REST API backend",
+        "Order placement and real-time status tracking",
+        "Clean separation of client and server codebases"
+      ],
+      techStack: ["React", "Vite", "Node.js", "Express.js", "JavaScript"],
+      impact: "End-to-end full-stack project showcasing MERN-adjacent architecture and API integration.",
+      github: "https://github.com/JayamalaB/Foodash"
     }
   ];
 
@@ -45,7 +75,7 @@ export default function Projects() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <div key={index} className="glass-card rounded-2xl overflow-hidden flex flex-col hover:-translate-y-2 transition-transform duration-300">
-            <div className="p-8 flex-grow flex flex-col">
+            <div className="p-8 grow flex flex-col">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                 <FolderGit2 className="w-6 h-6 text-primary" />
               </div>
@@ -54,7 +84,7 @@ export default function Projects() {
                 {project.description}
               </p>
               
-              <div className="mb-6 flex-grow">
+              <div className="mb-6 grow">
                 <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
                   <ChevronRight className="w-4 h-4 text-primary" /> Key Features
                 </h4>
@@ -81,6 +111,16 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Github className="w-4 h-4" /> View on GitHub
+                </a>
+              )}
             </div>
           </div>
         ))}

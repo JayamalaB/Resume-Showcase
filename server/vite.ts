@@ -1,6 +1,8 @@
 // @ts-nocheck
 import { type Express } from "express";
 import { createServer as createViteServer, createLogger } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 import { type Server } from "http";
 import fs from "fs";
 import { nanoid } from "nanoid";
@@ -19,8 +21,18 @@ export async function setupVite(server: Server, app: Express) {
     allowedHosts: true as const,
   };
 
+  const clientRoot = path.resolve(__dirname, "..", "client");
+
   const vite = await createViteServer({
     configFile: false,
+    root: clientRoot,
+    plugins: [react(), tailwindcss()],
+    resolve: {
+      alias: {
+        "@": path.resolve(clientRoot, "src"),
+        "@shared": path.resolve(__dirname, "..", "shared"),
+      },
+    },
     customLogger: {
       ...viteLogger,
       error: (msg, options) => {

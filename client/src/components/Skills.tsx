@@ -4,24 +4,24 @@ import { Code, Database, Terminal, Lightbulb } from "lucide-react";
 export default function Skills() {
   const skillCategories = [
     {
-      title: "Programming",
+      title: "Languages & Stacks",
       icon: Code,
-      skills: ["Python (Flask)", "PHP (Laravel/CodeIgniter)", "React", "JavaScript", "HTML/CSS"]
+      skills: ["Python", "JavaScript (ES6)", "PHP", "SQL", "MongoDB", "Express.js", "React.js", "Node.js"]
     },
     {
-      title: "Data Science",
-      icon: Database,
-      skills: ["Power BI", "SQL (MySQL)", "Machine Learning", "EDA", "Data Analytics"]
-    },
-    {
-      title: "Tools & Technologies",
+      title: "Backend & APIs",
       icon: Terminal,
-      skills: ["ServiceNow", "Git", "Firebase", "WordPress", "Jira"]
+      skills: ["REST API Design", "Flask", "Laravel", "CodeIgniter", "JWT Auth", "ServiceNow", "Postman"]
     },
     {
-      title: "Professional Skills",
+      title: "AI & Data",
       icon: Lightbulb,
-      skills: ["Analytical Thinking", "Problem-Solving", "Communication", "Agile Methodologies"]
+      skills: ["Sarvam AI (Saras STT, Bulbul TTS)", "RAG Concepts", "LangChain (exploring)", "Power BI", "ETL", "MySQL"]
+    },
+    {
+      title: "Tools & Practices",
+      icon: Database,
+      skills: ["Git / GitHub / GitLab", "Jira", "Agile / Scrum", "Claude (Anthropic)", "GitHub Copilot", "Docker (exploring)", "TypeScript (exploring)"]
     }
   ];
 
